@@ -1,0 +1,8 @@
+client_id = "QnNOTTlPS0JEQ1RlVVd4WjdoaHk6MTpjaQ"
+client_secret = "6-CUBotS_MXK0ZkEg0UH1ygTowZc9uN4fcmEXlQHmYyD8O-pus"
+api_key = "DtFuSs6bHedrfQABTgyKgpG0Y"
+api_key_secret = "qJE1RGGe39wVZuC1NE4IRr7erOFV0BIR904mh5TC2fNTL12FSR"
+bearer_token = r"AAAAAAAAAAAAAAAAAAAAAH3DngEAAAAATbTe8ecq%2FEJTmJEYcKQ1VKO%2Fl3U%3D5FqtMFXzkxAdF0JUU0LNc3SezC25VfHieUcq5Rz9hvPQ3wiDpt"
+access_token = "95771681-uV3jp094joXrDAatBET4zSKQs92f3EIMPVjprQk6q"
+access_token_secret = "Uogfm0aCPQ8i6AtIGe2UDzV3gZTDNnTkgHwvQ2WRvFjid"
+app_id = "27181754"
