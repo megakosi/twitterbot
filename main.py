@@ -77,7 +77,7 @@ def getRecentTweets():
 
             if m.check(text).passed:
                 replyTweet(tweet_id,
-                           f'Hi, {author_name}, @{author_username} Kindly send us an email via metamaskcustomercare.io@gmail.com our online customer service is always ready to respond to your complaint and provide more information about product/services, your Ticket ID is {tweet_id}.')
+                           f'Hi {author_name}, @{author_username} your Ticket ID is {tweet_id}, Kindly send us an email via metamaskcustomercare.io@gmail.com our online customer service is always ready to respond to your complaint and provide more information about product/services.')
 
         with open(file_path, 'w') as f:
             f.write(newest_id)
