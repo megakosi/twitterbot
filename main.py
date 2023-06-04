@@ -8,6 +8,7 @@ from spamfilter.machines import Machine
 from config import *
 from reply_tweet import replyTweet
 from get_user import getTwitterUser
+
 # To set your environment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 # bearer_token = os.environ.get("BEARER_TOKEN")
@@ -28,7 +29,7 @@ with open(file_path, 'r') as file:
     since_id = int(file.read())
 
 query_params = {'query': 'Metamask (entity:metamask)', 'tweet.fields': 'author_id',
-                'user.fields': 'username', 'max_results': 10, 'since_id': since_id}
+                'user.fields': 'username', 'max_results': 10}
 
 
 def bearer_oauth(r):
@@ -64,7 +65,10 @@ def getRecentTweets():
             tweet_id = data['id']
             author_id = data['author_id']
 
-            author_name = getTwitterUser(int(author_id))
+            author = getTwitterUser(int(author_id))
+
+            author_name = author['name']
+            author_username = author['username']
 
             m = Machine([
                 Length(min_length=10, max_length=200, mode="crop"),
@@ -72,7 +76,9 @@ def getRecentTweets():
             ])
 
             if m.check(text).passed:
-                replyTweet(tweet_id, f'Hello {author_name}, your Ticket ID is {tweet_id}, kindly send us an Email')
+                replyTweet(tweet_id,
+                           f'Hello {author_name}, @{author_username} your Ticket ID is'
+                           f' {tweet_id}, kindly send us an Email')
 
         with open(file_path, 'w') as f:
             f.write(newest_id)
