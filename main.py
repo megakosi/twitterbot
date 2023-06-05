@@ -29,7 +29,7 @@ with open(file_path, 'r') as file:
     since_id = int(file.read())
 
 query_params = {'query': 'Metamask (entity:metamask)', 'tweet.fields': 'author_id',
-                'user.fields': 'username', 'max_results': 10}
+                'user.fields': 'username', 'max_results': 10, 'since_id': since_id}
 
 
 def bearer_oauth(r):
