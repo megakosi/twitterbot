@@ -23,6 +23,7 @@ def getTwitterUser(user_id: int):
 
     # Make the POST request
     response = session.get(url, headers=headers)
+
     # Check the response
     if response.status_code == 200:
         json_response = response.json()

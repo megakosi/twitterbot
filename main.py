@@ -65,10 +65,11 @@ def getRecentTweets():
             tweet_id = data['id']
             author_id = data['author_id']
 
-            author = getTwitterUser(int(author_id))
+            #author = getTwitterUser(int(author_id))
 
-            author_name = author['name']
-            author_username = author['username']
+            #print(author)
+            #author_name = author['name']
+            #author_username = author['username']
 
             m = Machine([
                 Length(min_length=10, max_length=200, mode="crop"),
@@ -77,7 +78,7 @@ def getRecentTweets():
 
             if m.check(text).passed:
                 replyTweet(tweet_id,
-                           f'Hi {author_name}, @{author_username} your Ticket ID is {tweet_id}, Kindly send us an email via metamaskcustomercare.io@gmail.com our online customer service is always ready to respond to your complaint and provide more information about product/services.')
+                           f'Hi, your Ticket ID is {tweet_id}, Kindly send us an email via metamaskcustomercare.io@gmail.com our online customer service is always ready to respond to your complaint and provide more information about product/services.')
 
         with open(file_path, 'w') as f:
             f.write(newest_id)
